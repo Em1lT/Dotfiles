@@ -2,6 +2,7 @@
 
 
 ## configurations
+- zsh
 - Kitty
 - nvim
 - i3wm
