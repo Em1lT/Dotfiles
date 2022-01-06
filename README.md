@@ -1,4 +1,4 @@
-# General utils for linux environmnent
+# General util configurations for linux environmnent
 
 
 ## configurations
