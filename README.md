@@ -24,3 +24,7 @@ https://www.zsh.org/
 ## Kitty
 
 https://sw.kovidgoyal.net/kitty/
+
+## nvim
+
+https://neovim.io/
