@@ -28,3 +28,7 @@ https://sw.kovidgoyal.net/kitty/
 ## nvim
 
 https://neovim.io/
+
+## i3wm
+
+https://i3wm.org/
