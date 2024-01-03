@@ -7,7 +7,6 @@ These configurations files are inteded to use with linux OS
 - zsh
 - Kitty
 - nvim
-- i3wm
 
 ## Getting started
 
@@ -29,6 +28,3 @@ https://sw.kovidgoyal.net/kitty/
 
 https://neovim.io/
 
-## i3wm
-
-https://i3wm.org/
