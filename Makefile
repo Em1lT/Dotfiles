@@ -12,6 +12,13 @@ DOTFILES_TARGET_DIR := $(HOME)/dotfiles
 EM1LT_GITHUB_USER := Em1lt
 
 install:
+	@echo "\nFetching dotfiles from GitHub user $(EM1LT_GITHUB_USER)..."
+	@git clone https://github.com/$(EM1LT_GITHUB_USER)/dotfiles.git $(DOTFILES_TARGET_DIR) || \
+        echo "Failed to clone dotfiles repository from GitHub user $(EM1LT_GITHUB_USER)."
+	@echo "\nCreating symbolic links for dotfiles..."
+	@ln -sf $(DOTFILES_TARGET_DIR)/.bashrc $(HOME)/.bashrc
+	@ln -sf $(DOTFILES_TARGET_DIR)/.vimrc $(HOME)/.vimrc
+	@ln -sf $(DOTFILES_TARGET_DIR)/.zshrc $(HOME)/.zshrc
 	@echo "Checking the operating system..."
 	@if [ "$(UNAME)" = "Darwin" ]; then \
       if [ -f $(HOMEBREW_PACKAGES_FILE) ]; then \
@@ -31,9 +38,3 @@ install:
   else \
       echo "$(APT_PACKAGES_FILE) not found. Skipping apt-get installations."; \
   fi
-	@echo "\nFetching dotfiles from GitHub user $(EM1LT_GITHUB_USER)..."
-	@git clone https://github.com/$(EM1LT_GITHUB_USER)/dotfiles.git $(DOTFILES_TARGET_DIR) || \
-        echo "Failed to clone dotfiles repository from GitHub user $(EM1LT_GITHUB_USER)."
-	@echo "\nCreating symbolic links for dotfiles..."
-	@ln -sf $(DOTFILES_TARGET_DIR)/.bashrc $(HOME)/.bashrc
-	@ln -sf $(DOTFILES_TARGET_DIR)/.vimrc $(HOME)/.vimrc
