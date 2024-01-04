@@ -14,6 +14,9 @@ Install packages zsh kitty nvim & i3wm on your distributions package manager. Le
 
 More detailed description coming soon.
 
+## Install
+
+Make
 
 
 ## Zsh
