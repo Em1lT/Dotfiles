@@ -38,9 +38,6 @@ unmap("n", "<C-s>")
 -- noremap <C-l> <Nop>
 unmap("n", "<C-l>")
 
--- noremap <C-i> <Nop>
-unmap("n", "<C-i>")
-
 -- noremap <C-q> <Nop>
 unmap("n", "<C-q>")
 
