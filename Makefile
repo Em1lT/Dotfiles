@@ -12,6 +12,9 @@ install:
 	@echo "\nCreating symbolic links for dotfiles..."
 	# @ln -sf $(DOTFILES_TARGET_DIR)/.bashrc $(HOME)/.bashrc
 	@ln -sf $(DOTFILES_TARGET_DIR)/.vimrc $(HOME)/.vimrc
+	# install essential packages separately
+	# tmux, nvim, nvm, zsh, bat, ripgrep, fd, fortune, cowsay
+
 	# @ln -sf $(DOTFILES_TARGET_DIR)/.zshrc $(HOME)/.zshrc
 	# @echo "Checking the operating system..."
 	# @if [ "$(UNAME)" = "Darwin" ]; then \
