@@ -6,15 +6,9 @@ HOMEBREW_PACKAGES_FILE := packages_homebrew.txt
 APT_PACKAGES_FILE := packages_apt-get.txt
 
 # Target directory for dotfiles
-DOTFILES_TARGET_DIR := $(HOME)/dotfiles
-
-# GitHub usernames
-GITHUB_USER := Em1lt
+DOTFILES_TARGET_DIR := $(PWD)
 
 install:
-	@echo "\nFetching dotfiles from GitHub user $(GITHUB_USER)..."
-	@git clone https://github.com/$(GITHUB_USER)/dotfiles.git $(DOTFILES_TARGET_DIR) || \
-        echo "Failed to clone dotfiles repository from GitHub user $(GITHUB_USER)."
 	@echo "\nCreating symbolic links for dotfiles..."
 	# @ln -sf $(DOTFILES_TARGET_DIR)/.bashrc $(HOME)/.bashrc
 	@ln -sf $(DOTFILES_TARGET_DIR)/.vimrc $(HOME)/.vimrc
