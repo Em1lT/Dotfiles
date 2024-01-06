@@ -60,4 +60,4 @@ export PATH="${HOME}/.pyenv/shims:${PATH}"
 alias mfs='git diff | grep console.' # find console.log in git diff
 
 # bun completions
-[ -s "/Users/etvertics/.bun/_bun" ] && source "/Users/etvertics/.bun/_bun"
+# [ -s "/Users/etvertics/.bun/_bun" ] && source "/Users/etvertics/.bun/_bun"
