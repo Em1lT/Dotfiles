@@ -5,6 +5,7 @@ local unmap = require("utils.keymap").unmap
 
 -- unmap keyboard
 unmap("n", "<C-c>")
+
 -- noremap <Up> <Nop>
 unmap("n", "<C-a>")
 
@@ -29,17 +30,11 @@ unmap("n", "<C-n>")
 -- noremap <C-h> <Nop>
 unmap("n", "<C-h>")
 
--- noremap <C-a> <Nop>
-unmap("n", "<C-a>")
-
 -- noremap <C-s> <Nop>
 unmap("n", "<C-s>")
 
 -- noremap <C-l> <Nop>
 unmap("n", "<C-l>")
-
--- noremap <C-i> <Nop>
-unmap("n", "<C-i>")
 
 -- noremap <C-q> <Nop>
 unmap("n", "<C-q>")
