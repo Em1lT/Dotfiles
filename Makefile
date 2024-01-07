@@ -10,8 +10,20 @@ DOTFILES_TARGET_DIR := $(PWD)
 
 install:
 	@echo "\nCreating symbolic links for dotfiles..."
-	# @ln -sf $(DOTFILES_TARGET_DIR)/.bashrc $(HOME)/.bashrc
+	@ln -sf $(DOTFILES_TARGET_DIR)/.bashrc $(HOME)/.bashrc
 	@ln -sf $(DOTFILES_TARGET_DIR)/.vimrc $(HOME)/.vimrc
+
+	# install tpm
+
+	# catpuccing for tmux
+
+	# install zshrc if there is not 
+
+	# zsh -syntax
+
+
+	# install nvm
+
 	# install essential packages separately
 	# tmux, nvim, nvm, zsh, bat, ripgrep, fd, fortune, cowsay
 
