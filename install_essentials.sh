@@ -1,30 +1,73 @@
 #!/bin/bash
 
+packages=("zsh" "tmux" "fd" "tldr", "ripgrep", "bat", "exa", "fzf", "httpie", "jq", "lua", "luajit", "neovim", "nginx", "tldr", "tmux", "wget", "yarn", "youtube-dl", "kitty")
 
 create_symbolic_links() {
   echo "Create symbolic links for dotfiles..."
-  ln -sf "${DOTFILES_TARGET_DIR}/.bashrc" "${HOME}/.bashrc"
   ln -sf "${DOTFILES_TARGET_DIR}/.vimrc" "${HOME}/.vimrc"
   ln -sf "${DOTFILES_TARGET_DIR}/.tmux.conf" "${HOME}/.tmux.conf"
   ln -sf "${DOTFILES_TARGET_DIR}/Neovim" "${HOME}/.config/nvim"
   ln -sf "${DOTFILES_TARGET_DIR}/.zshrc" "${HOME}/.zshrc"
 }
 
-check_and_install_zsh() {
+zsh_default_shell() {
   echo "Checking the Terminal. It needs to be zsh..."
   if [ "${SHELL}" = "/usr/bin/zsh" ]; then
     echo "zsh is already installed..."
   else
-    echo "Installing zsh..."
-    sudo apt-get install zsh
-    echo "Defaulting terminal to zsh"
     chsh -s "$(command -v zsh)"
   fi
 }
 
+check_and_install_brew() {
+  echo "Checking Homebrew..."
+  if ! command -v brew >/dev/null 2>&1; then
+    echo "Installing Homebrew..."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  else
+    echo "Homebrew is already installed..."
+  fi
+}
+
+
+check_and_install_essential_linux() {
+    for package in "${packages[@]}"; do
+        echo "Installing $package..."
+        brew install $package
+    done
+}
+
+check_and_install_essential_linux() {
+    for package in "${packages[@]}"; do
+        echo "Installing $package..."
+        sudo apt-get install -y $package
+    done
+}
+
 install_dotfiles() {
-  create_symbolic_links
-  check_and_install_zsh
+    if [ "$(uname)" == "Darwin" ]; then
+        OS="macOS"
+    elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+        OS="Linux"
+    else
+        OS="Unknown"
+    fi
+
+    echo "Detected operating system: $OS"
+    if [ "$OS" == "macOS" ]; then
+        echo "Running macOS-specific commands..."
+        check_and_install_brew
+        check_and_install_essential_mac
+    fi
+
+    # Add your Linux-specific commands here
+    if [ "$OS" == "Linux" ]; then
+        echo "Running Linux-specific commands..."
+        check_and_install_essential_linux
+    fi
+
+    # create_symbolic_links
+    # zsh_default_shell
 }
 
 install_dotfiles
