@@ -16,7 +16,9 @@ More detailed description coming soon.
 
 ## Install
 
-Make
+1. chmod +x install_essentials.sh
+2. ./install_essentials.sh
+
 
 
 ## Zsh
