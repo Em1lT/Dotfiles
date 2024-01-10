@@ -6,8 +6,8 @@ export NVM_DIR="$HOME/.nvm"
 ###    CONFIGS     ###
 ######################
 
-export primaryColor='#a6e3a1'
-export secondaryColor='#fab387'
+export primaryColor='#fab387'
+export secondaryColor='#89b4fa'
 # Commandline color
 export PS1=" [%(?.%F{green}√.%F{red}X)%F{white}] [%*] %F{$primaryColor}%n%f:%F{$secondaryColor}%~%f$ "
 # export PS2="[%(?.%F{082}√.%F{red}X)%F{white}] [%T] %F{124}%n%f:%F{160}%~%f$ "
@@ -38,7 +38,7 @@ setopt prompt_subst
 RPROMPT=\$vcs_info_msg_0_
 
 # Right side prompt
-zstyle ':vcs_info:git:*' formats '%K{148}  %F{black}%b  %k'
+zstyle ':vcs_info:git:*' formats "%K{$secondaryColor}  %F{black}%b  %k"
 
 # Aliases
 # if [ -e ~/.zsh_aliases ];
