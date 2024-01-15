@@ -1,6 +1,6 @@
 #!/bin/bash
 
-packages=("zsh" "tmux" "fd" "tldr", "ripgrep", "bat", "exa", "fzf", "httpie", "jq", "lua", "luajit", "neovim", "nginx", "tldr", "tmux", "wget", "yarn", "youtube-dl", "kitty")
+packages=("zsh" "tmux" "fd" "tldr", "ripgrep", "bat", "exa", "fzf", "httpie", "jq", "lua", "luajit", "nginx", "tldr", "tmux", "wget", "yarn", "youtube-dl", "kitty")
 
 create_symbolic_links() {
   echo "Create symbolic links for dotfiles..."
@@ -17,6 +17,12 @@ zsh_default_shell() {
   else
     chsh -s "$(command -v zsh)"
   fi
+}
+
+install_nvim() {
+  # install separate and link to lua dir on dotfiles
+  echo "Installing Neovim..."
+  brew install neovim
 }
 
 check_and_install_brew() {
@@ -64,6 +70,7 @@ install_dotfiles() {
     if [ "$OS" == "Linux" ]; then
         echo "Running Linux-specific commands..."
         check_and_install_essential_linux
+        install_nvim
     fi
 
     # create_symbolic_links
