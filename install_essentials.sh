@@ -6,7 +6,6 @@ create_symbolic_links() {
   echo "Create symbolic links for dotfiles..."
   ln -sf "${DOTFILES_TARGET_DIR}/.vimrc" "${HOME}/.vimrc"
   ln -sf "${DOTFILES_TARGET_DIR}/.tmux.conf" "${HOME}/.tmux.conf"
-  ln -sf "${DOTFILES_TARGET_DIR}/Neovim" "${HOME}/.config/nvim"
   ln -sf "${DOTFILES_TARGET_DIR}/.zshrc" "${HOME}/.zshrc"
 }
 
@@ -19,10 +18,11 @@ zsh_default_shell() {
   fi
 }
 
-install_nvim() {
+install_nvim_mac() {
   # install separate and link to lua dir on dotfiles
   echo "Installing Neovim..."
   brew install neovim
+  ln -sf "${DOTFILES_TARGET_DIR}/Neovim" "${HOME}/.config/nvim"
 }
 
 check_and_install_brew() {
@@ -64,6 +64,7 @@ install_dotfiles() {
         echo "Running macOS-specific commands..."
         check_and_install_brew
         check_and_install_essential_mac
+        install_nvim_mac
     fi
 
     # Add your Linux-specific commands here
