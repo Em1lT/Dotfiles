@@ -22,6 +22,7 @@ install_nvim_mac() {
   # install separate and link to lua dir on dotfiles
   echo "Installing Neovim..."
   brew install neovim
+  echo "Linking Neovim to .config/nvim..."
   ln -sf "${DOTFILES_TARGET_DIR}/Neovim" "${HOME}/.config/nvim"
 }
 
