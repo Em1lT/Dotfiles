@@ -7,7 +7,8 @@ return require('packer').startup(function(use)
 	-- Coding tools
 	use 'tpope/vim-surround'
 	use {'neoclide/coc.nvim', branch = 'release'}
-	use { "zbirenbaum/copilot.lua" }
+	-- use { "zbirenbaum/copilot.lua" }
+	use 'supermaven-inc/supermaven-nvim'
 
 	-- Visual help & navigation
 	use 'hoob3rt/lualine.nvim'
@@ -19,6 +20,9 @@ return require('packer').startup(function(use)
 	use 'nvim-telescope/telescope.nvim'
 	use 'Em1lT/simi'
 	use 'lewis6991/gitsigns.nvim'
+
+  -- Editor help
+	use { "fedepujol/move.nvim" }
 
 	-- Themes
 	use { "catppuccin/nvim", as = "catppuccin" }

@@ -21,6 +21,15 @@ unmap("n", "<Left>")
 -- noremap <Right> <Nop>
 unmap("n", "<Right>")
 
+-- noremap <C-z> <Nop>
+unmap("n", "<C-z>")
+
+-- noremap <C-x> <Nop>
+unmap("n", "<C-x>")
+
+-- noremap <C-c> <Nop>
+unmap("n", "<C-c>")
+
 -- noremap <C-p> <Nop>
 unmap("n", "<C-p>")
 

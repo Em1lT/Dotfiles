@@ -1,15 +1,10 @@
 require('telescope').setup({
+pickers = {
+  find_files = {
+    hidden = true,
+  },
+},
 defaults = {
-    vimgrep_arguments = {
-      "rg",
-      "-L",
-      "--color=never",
-      "--no-heading",
-      "--with-filename",
-      "--line-number",
-      "--column",
-      "--smart-case",
-    },
     prompt_prefix = "",
     selection_caret = "  ",
     entry_prefix = "  ",
@@ -27,7 +22,7 @@ defaults = {
         mirror = false,
       },
     },
-    file_ignore_patterns = { "node_modules" },
+    file_ignore_patterns = { "node_modules", ".git" },
     borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
     color_devicons = true,
     set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
@@ -38,7 +33,6 @@ defaults = {
   extensions = {
 	  "coc", "harpoon"
   }
-
 })
 -- Set these to the setup itself
 -- require('telescope').load_extension('coc')

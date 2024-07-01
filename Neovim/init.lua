@@ -14,7 +14,9 @@ require('configs.catpuccin')
 require('configs.lualine')
 require('configs.coc')
 require('configs.gitsigns')
-require('configs.copilot')
+-- require('configs.copilot')
+require('configs.move')
+require('configs.supermaven')
 
 
 
