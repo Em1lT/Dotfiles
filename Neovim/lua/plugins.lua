@@ -10,7 +10,10 @@ return require('packer').startup(function(use)
 	use 'hrsh7th/cmp-buffer'
 	use 'hrsh7th/cmp-path'
 	use 'hrsh7th/cmp-cmdline'
-	use  'L3MON4D3/LuaSnip'
+	use  {
+    "L3MON4D3/LuaSnip",
+    dependencies = { "rafamadriz/friendly-snippets" },
+  }
 	-- use  'SirVer/ultisnips'
 
 	-- Visual help & navigation
@@ -40,6 +43,8 @@ return require('packer').startup(function(use)
 		"hrsh7th/nvim-cmp",
 	    },
 	}
+  -- formatter
+  use 'sbdchd/neoformat'
 
 	-- Editor help
 	use { "fedepujol/move.nvim" }

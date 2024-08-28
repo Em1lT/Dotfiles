@@ -66,7 +66,7 @@ map("n", "<C-k>", ":tabnext<CR>", {silent = true, noremap = true})
 -- this is for tweaking between eslint and prettier. Prettier has pretty good defaults but on the overall level eslint is much better
 -- map("n", "<C-f>", ":CocCommand prettier.formatFile<CR>", {silent = true, noremap = true})
 -- map("n", "<C-f>", ":CocCommand eslint.executeAutofix<CR>", {silent = true, noremap = true})
-
+map("n", "<C-f>", ":Neoformat<CR>", {silent = true, noremap = true})
 
 -- Navigation
 
@@ -85,13 +85,13 @@ map("n", "'", "ä")
 map("n", "<C-p>", ":Telescope find_files<CR>", {silent = true, noremap = true})
 
 -- noremap <C-h> :Telescope coc definitions<CR>
--- map("n", "<C-h>", ":Telescope coc definitions<CR>", {silent = true, noremap = true})
+map("n", "<C-h>", ":Telescope lsp_definitions<CR>", {silent = true, noremap = true})
 
 -- simi search with fzf under the cursor
-map("n", "<C-g>", ":lua require('simi').search_with_name_under_cursor()<CR>", {silent = true, noremap = true})
+-- map("n", "<C-g>", ":lua require('simi').search_with_name_under_cursor()<CR>", {silent = true, noremap = true})
 
 -- noremap <C-i> :Telescope coc references<CR>
--- map("n", "<C-g>", ":Telescope coc references<CR>", {silent = true, noremap = true})
+map("n", "<C-g>", ":Telescope lsp_references<CR>", {silent = true, noremap = true})
 
 -- noremap <C-q> :lua require("harpoon.mark").add_file()<CR>
 map("n", "<C-a>", ":lua require('harpoon.mark').add_file()<CR>", {silent = true, noremap = true})
@@ -129,7 +129,7 @@ map("n", "<leader>ch", "<cmd>Telescope command_history<cr>", {silent = true, nor
 -- map("n", "<leader>dn", "<cmd>:Telescope coc diagnostics<cr>", {silent = true, noremap = true})
 
 -- nnoremap <leader>tp <cmd>:Telescope coc type_definition<cr>
--- map("n", "<leader>tp", "<cmd>:Telescope coc type_definition<cr>", {silent = true, noremap = true})
+map("n", "<leader>tp", "<cmd>:Telescope lsp_type_definitions<cr>", {silent = true, noremap = true})
 
 map("n", "<leader>aa", ":tabnew<cr>", {silent = true, noremap = true})
 

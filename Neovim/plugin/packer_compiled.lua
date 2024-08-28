@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/Users/etvertics/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/Users/etvertics/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/Users/etvertics/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/Users/etvertics/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/Users/etvertics/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
+local package_path_str = "/Users/etvertics/.cache/nvim/packer_hererocks/2.1.1724512491/share/lua/5.1/?.lua;/Users/etvertics/.cache/nvim/packer_hererocks/2.1.1724512491/share/lua/5.1/?/init.lua;/Users/etvertics/.cache/nvim/packer_hererocks/2.1.1724512491/lib/luarocks/rocks-5.1/?.lua;/Users/etvertics/.cache/nvim/packer_hererocks/2.1.1724512491/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/Users/etvertics/.cache/nvim/packer_hererocks/2.1.1724512491/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -129,6 +129,16 @@ _G.packer_plugins = {
     path = "/Users/etvertics/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/hoob3rt/lualine.nvim"
   },
+  ["mason-lspconfig.nvim"] = {
+    loaded = true,
+    path = "/Users/etvertics/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+    url = "https://github.com/williamboman/mason-lspconfig.nvim"
+  },
+  ["mason.nvim"] = {
+    loaded = true,
+    path = "/Users/etvertics/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    url = "https://github.com/williamboman/mason.nvim"
+  },
   ["move.nvim"] = {
     loaded = true,
     path = "/Users/etvertics/.local/share/nvim/site/pack/packer/start/move.nvim",
@@ -148,6 +158,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/etvertics/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
     url = "https://github.com/kyazdani42/nvim-tree.lua"
+  },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/Users/etvertics/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
