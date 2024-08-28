@@ -14,6 +14,7 @@ return require('packer').startup(function(use)
     "L3MON4D3/LuaSnip",
     dependencies = { "rafamadriz/friendly-snippets" },
   }
+  use { 'saadparwaiz1/cmp_luasnip' }
 	-- use  'SirVer/ultisnips'
 
 	-- Visual help & navigation
@@ -37,11 +38,11 @@ return require('packer').startup(function(use)
 	-- use { "zbirenbaum/copilot.lua" }
 	-- use 'supermaven-inc/supermaven-nvim' -- Not in use. 
 	use {
-	    "Exafunction/codeium.nvim",
-	    requires = {
-		"nvim-lua/plenary.nvim",
-		"hrsh7th/nvim-cmp",
-	    },
+	  "Exafunction/codeium.nvim",
+	  requires = {
+      "nvim-lua/plenary.nvim",
+      "hrsh7th/nvim-cmp",
+	  },
 	}
   -- formatter
   use 'sbdchd/neoformat'
@@ -53,17 +54,14 @@ return require('packer').startup(function(use)
 	use { "catppuccin/nvim", as = "catppuccin" }
 	use 'mhartington/oceanic-next'
 	use 'morhetz/gruvbox'
-	use {
-	  'nvim-treesitter/nvim-treesitter',
-          run = ':TSUpdate'
-    	}
 
 	-- Misc
 	use 'nvim-lua/plenary.nvim'
-	-- use {
-	--     'nvim-treesitter/nvim-treesitter',
-	--     run = ':TSUpdate'
-	-- }
+	use {
+	  'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+  }
+  use "rafamadriz/friendly-snippets"
 
 	-- Documentation
 	use({

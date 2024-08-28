@@ -62,14 +62,16 @@
   cmp.setup.cmdline({ '/', '?' }, {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
-      { name = 'buffer' }
+      { name = 'buffer' },
+      { name = 'codeium' }
     }
   })
 
   cmp.setup.cmdline(':', {
     mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources({
-      { name = 'path' }
+      { name = 'path' },
+      { name = 'codeium' }
     }, {
       { name = 'cmdline' }
     }),
