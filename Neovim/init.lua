@@ -7,21 +7,10 @@ require('mappings')
 
 -- plugin configurations
 require('plugins')
-require('configs.nvim-tree')
-require('configs.nvim-web-devicons')
-require('configs.telescope')
-require('configs.catpuccin')
-require('configs.lualine')
-require('configs.coc')
-require('configs.signs')
--- require('configs.copilot')
-require('configs.move')
-require('configs.supermaven')
+require('configs')
 
-
-
--- special overrides for handshake
 vim.cmd([[
 	set autoindent expandtab tabstop=2 shiftwidth=2
 ]])
+
 

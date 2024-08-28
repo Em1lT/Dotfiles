@@ -1,4 +1,4 @@
-local api = vim.api
+-- local api = vim.api
 
 -- colorscheme
 

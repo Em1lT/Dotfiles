@@ -65,7 +65,7 @@ map("n", "<C-k>", ":tabnext<CR>", {silent = true, noremap = true})
 -- Coding convention
 -- this is for tweaking between eslint and prettier. Prettier has pretty good defaults but on the overall level eslint is much better
 -- map("n", "<C-f>", ":CocCommand prettier.formatFile<CR>", {silent = true, noremap = true})
-map("n", "<C-f>", ":CocCommand eslint.executeAutofix<CR>", {silent = true, noremap = true})
+-- map("n", "<C-f>", ":CocCommand eslint.executeAutofix<CR>", {silent = true, noremap = true})
 
 
 -- Navigation
@@ -85,7 +85,7 @@ map("n", "'", "ä")
 map("n", "<C-p>", ":Telescope find_files<CR>", {silent = true, noremap = true})
 
 -- noremap <C-h> :Telescope coc definitions<CR>
-map("n", "<C-h>", ":Telescope coc definitions<CR>", {silent = true, noremap = true})
+-- map("n", "<C-h>", ":Telescope coc definitions<CR>", {silent = true, noremap = true})
 
 -- simi search with fzf under the cursor
 map("n", "<C-g>", ":lua require('simi').search_with_name_under_cursor()<CR>", {silent = true, noremap = true})
@@ -105,7 +105,7 @@ map("n", "<C-l>", ":Telescope harpoon marks<CR>", {silent = true, noremap = true
 map("n", "<leader>ff", ":Telescope find_files<CR>", {silent = true, noremap = true})
 
 -- nnoremap <leader>rf <cmd>:Telescope coc references<cr>
-map("n", "<leader>rf", "<cmd>:Telescope coc references<cr>", {silent = true, noremap = true})
+-- map("n", "<leader>rf", "<cmd>:Telescope coc references<cr>", {silent = true, noremap = true})
 
 -- nnoremap <leader>gf <cmd>Telescope git_files<cr>
 map("n", "<leader>gf", "<cmd>Telescope git_files<cr>", {silent = true, noremap = true})
@@ -126,10 +126,10 @@ map("n", "<leader>gs", "<cmd>Telescope git_status<cr>", {silent = true, noremap 
 map("n", "<leader>ch", "<cmd>Telescope command_history<cr>", {silent = true, noremap = true})
 
 -- nnoremap <leader>dn <cmd>:Telescope coc diagnostics<cr>
-map("n", "<leader>dn", "<cmd>:Telescope coc diagnostics<cr>", {silent = true, noremap = true})
+-- map("n", "<leader>dn", "<cmd>:Telescope coc diagnostics<cr>", {silent = true, noremap = true})
 
 -- nnoremap <leader>tp <cmd>:Telescope coc type_definition<cr>
-map("n", "<leader>tp", "<cmd>:Telescope coc type_definition<cr>", {silent = true, noremap = true})
+-- map("n", "<leader>tp", "<cmd>:Telescope coc type_definition<cr>", {silent = true, noremap = true})
 
 map("n", "<leader>aa", ":tabnew<cr>", {silent = true, noremap = true})
 

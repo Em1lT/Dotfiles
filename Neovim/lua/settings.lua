@@ -56,6 +56,9 @@ vim.cmd([[
 	au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 ]])
 
+-- Obsidian
+opt.conceallevel = 1
+
 
 
 -- Copilot keymappings
