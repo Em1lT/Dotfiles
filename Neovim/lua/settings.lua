@@ -57,7 +57,7 @@ vim.cmd([[
 ]])
 
 -- Obsidian
-opt.conceallevel = 1
+opt.conceallevel = 0
 
 
 
