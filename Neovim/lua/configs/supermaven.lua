@@ -1,7 +1,7 @@
 -- deprecated. Not in use for now 
 require("supermaven-nvim").setup({
   keymaps = {
-    accept_suggestion = "<C-n>",
+    accept_suggestion = "<C-x>",
     clear_suggestion = "<C-c>",
     accept_word = "<C-z>",
   },
