@@ -12,25 +12,32 @@
       -- documentation = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
+      -- ['<C-n>'] = cmp.mapping.complete(),
+      -- ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
       ['<C-b>'] = cmp.mapping.scroll_docs(-4),
       ['<C-f>'] = cmp.mapping.scroll_docs(4),
-      -- ['<C-n>'] = cmp.mapping.complete(),
       ['<C-c>'] = cmp.mapping.abort(),
-      -- ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-      ['<C-n>'] = cmp.mapping.confirm({ select = true }), 
+      -- ['<C-n>'] = cmp.mapping.confirm({ select = true }),
        -- If nothing is selected (including preselections) add a newline as usual.
       -- If something has explicitly been selected by the user, select it.
-      ["<Enter>"] = function(fallback)
+      ["<space>"] = function(fallback)
           -- Don't block <CR> if signature help is active
           -- https://github.com/hrsh7th/cmp-nvim-lsp-signature-help/issues/13
           if not cmp.visible() or not cmp.get_selected_entry() or cmp.get_selected_entry().source.name == 'nvim_lsp_signature_help' then
               fallback()
           else
               cmp.confirm({
-                  -- Replace word if completing in the middle of a word
-                  -- https://github.com/hrsh7th/nvim-cmp/issues/664
                   behavior = cmp.ConfirmBehavior.Replace,
-                  -- Don't select first item on CR if nothing was selected
+                  select = false,
+              })
+          end
+      end,
+      ["<Enter>"] = function(fallback)
+          if not cmp.visible() or not cmp.get_selected_entry() or cmp.get_selected_entry().source.name == 'nvim_lsp_signature_help' then
+              fallback()
+          else
+              cmp.confirm({
+                  behavior = cmp.ConfirmBehavior.Replace,
                   select = false,
               })
           end
@@ -53,7 +60,6 @@
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
       { name = 'luasnip' }, -- For luasnip users.
-      { name = 'codeium' }
     }, {
       { name = 'buffer' },
     })
@@ -63,7 +69,6 @@
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
       { name = 'buffer' },
-      { name = 'codeium' }
     }
   })
 
@@ -71,7 +76,6 @@
     mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources({
       { name = 'path' },
-      { name = 'codeium' }
     }, {
       { name = 'cmdline' }
     }),

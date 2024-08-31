@@ -36,14 +36,14 @@ return require('packer').startup(function(use)
 	use 'tpope/vim-surround'
 	-- use {'neoclide/coc.nvim', branch = 'release'} -- Deprecated, Testing nvim-cmp
 	-- use { "zbirenbaum/copilot.lua" }
-	-- use 'supermaven-inc/supermaven-nvim' -- Not in use. 
-	use {
-	  "Exafunction/codeium.nvim",
-	  requires = {
-      "nvim-lua/plenary.nvim",
-      "hrsh7th/nvim-cmp",
-	  },
-	}
+	use 'supermaven-inc/supermaven-nvim'
+  -- use {
+	--   "Exafunction/codeium.nvim",
+	--   requires = {
+  --     "nvim-lua/plenary.nvim",
+  --     "hrsh7th/nvim-cmp",
+	--   },
+	-- }  Not in use. 
   -- formatter
   use 'sbdchd/neoformat'
 

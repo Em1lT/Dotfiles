@@ -104,10 +104,15 @@ _G.packer_plugins = {
     path = "/Users/etvertics/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
-  ["codeium.nvim"] = {
+  cmp_luasnip = {
     loaded = true,
-    path = "/Users/etvertics/.local/share/nvim/site/pack/packer/start/codeium.nvim",
-    url = "https://github.com/Exafunction/codeium.nvim"
+    path = "/Users/etvertics/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+    url = "https://github.com/saadparwaiz1/cmp_luasnip"
+  },
+  ["friendly-snippets"] = {
+    loaded = true,
+    path = "/Users/etvertics/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    url = "https://github.com/rafamadriz/friendly-snippets"
   },
   ["gitsigns.nvim"] = {
     loaded = true,
@@ -143,6 +148,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/etvertics/.local/share/nvim/site/pack/packer/start/move.nvim",
     url = "https://github.com/fedepujol/move.nvim"
+  },
+  neoformat = {
+    loaded = true,
+    path = "/Users/etvertics/.local/share/nvim/site/pack/packer/start/neoformat",
+    url = "https://github.com/sbdchd/neoformat"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -193,6 +203,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/etvertics/.local/share/nvim/site/pack/packer/start/simi",
     url = "https://github.com/Em1lT/simi"
+  },
+  ["supermaven-nvim"] = {
+    loaded = true,
+    path = "/Users/etvertics/.local/share/nvim/site/pack/packer/start/supermaven-nvim",
+    url = "https://github.com/supermaven-inc/supermaven-nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
