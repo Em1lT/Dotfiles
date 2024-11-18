@@ -1,42 +1,72 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
-return require('packer').startup(function(use)
-	-- Packer can manage itself
-	use 'wbthomason/packer.nvim'
+-- Change!!
+-- 18.11.2024 Changed packer to lazy.nvim becuase packer is unmaintained 
 
+-- bootstrap lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+  if vim.v.shell_error ~= 0 then
+    vim.api.nvim_echo({
+      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+      { out, "WarningMsg" },
+      { "\nPress any key to exit..." },
+    }, true, {})
+    vim.fn.getchar()
+    os.exit(1)
+  end
+end
+vim.opt.rtp:prepend(lazypath)
+
+-- This file can be loaded by calling `lua require('plugins')` from your init.vim
+return require('lazy').setup({
 	-- part of nvim-cmp
-	use 'neovim/nvim-lspconfig'
-	use 'hrsh7th/nvim-cmp'
-	use 'hrsh7th/cmp-nvim-lsp'
-	use 'hrsh7th/cmp-buffer'
-	use 'hrsh7th/cmp-path'
-	use 'hrsh7th/cmp-cmdline'
-	use  {
-    "L3MON4D3/LuaSnip",
-    dependencies = { "rafamadriz/friendly-snippets" },
-  }
-  use { 'saadparwaiz1/cmp_luasnip' }
-	-- use  'SirVer/ultisnips'
+	'neovim/nvim-lspconfig',
+	'hrsh7th/nvim-cmp',
+	'hrsh7th/cmp-nvim-lsp',
+	'hrsh7th/cmp-buffer',
+	'hrsh7th/cmp-path',
+	'hrsh7th/cmp-cmdline',
+  {'L3MON4D3/LuaSnip', dependencies = { 'rafamadriz/friendly-snippets' }},
+  { 'saadparwaiz1/cmp_luasnip' },
 
 	-- Visual help & navigation
-	use 'hoob3rt/lualine.nvim'
-	use 'ThePrimeagen/harpoon'
-	use 'kyazdani42/nvim-tree.lua'
-	use 'justinmk/vim-sneak'
-	use 'kyazdani42/nvim-web-devicons'
-	-- use 'fannheyward/telescope-coc.nvim' -- Deprecated, Testing nvim-cmp
-	use 'nvim-telescope/telescope.nvim'
-	use 'Em1lT/simi'
-	use 'lewis6991/gitsigns.nvim'
+	'hoob3rt/lualine.nvim',
+	'ThePrimeagen/harpoon',
+	'kyazdani42/nvim-tree.lua',
+	'justinmk/vim-sneak',
+	'kyazdani42/nvim-web-devicons',
+	'nvim-telescope/telescope.nvim',
+	'Em1lT/simi',
+	'lewis6991/gitsigns.nvim',
 
 	-- lsp handling
-	use 'williamboman/mason.nvim'
-	use 'williamboman/mason-lspconfig.nvim'
+	'williamboman/mason.nvim',
+  'williamboman/mason-lspconfig.nvim',
 
 	-- Coding tools
-	use 'tpope/vim-surround'
-	-- use {'neoclide/coc.nvim', branch = 'release'} -- Deprecated, Testing nvim-cmp
-	-- use { "zbirenbaum/copilot.lua" }
-	use 'supermaven-inc/supermaven-nvim'
+	'tpope/vim-surround',
+	'supermaven-inc/supermaven-nvim',
+  'sbdchd/neoformat',
+
+	-- Editor help
+	{ "fedepujol/move.nvim" },
+
+	-- Themes
+	{ 'catppuccin/nvim', name = 'catppuccin' },
+	'mhartington/oceanic-next',
+  'morhetz/gruvbox',
+
+	-- Misc
+	'nvim-lua/plenary.nvim',
+	{ 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
+  "rafamadriz/friendly-snippets",
+
+	-- Documentation
+	{ "epwalsh/obsidian.nvim", version = "*", dependencies = { "nvim-lua/plenary.nvim", }},
+
+
+  -- not in use, Still in packer config -> migrate to lazy.nvim when back in use
   -- use {
 	--   "Exafunction/codeium.nvim",
 	--   requires = {
@@ -45,31 +75,8 @@ return require('packer').startup(function(use)
 	--   },
 	-- }  Not in use. 
   -- formatter
-  use 'sbdchd/neoformat'
-
-	-- Editor help
-	use { "fedepujol/move.nvim" }
-
-	-- Themes
-	use { "catppuccin/nvim", as = "catppuccin" }
-	use 'mhartington/oceanic-next'
-	use 'morhetz/gruvbox'
-
-	-- Misc
-	use 'nvim-lua/plenary.nvim'
-	use {
-	  'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
-  }
-  use "rafamadriz/friendly-snippets"
-
-	-- Documentation
-	use({
-	  "epwalsh/obsidian.nvim",
-	  tag = "*",
-	  requires = {
-	    "nvim-lua/plenary.nvim",
-	  },
-	})
-
-end)
+	-- use {'neoclide/coc.nvim', branch = 'release'} -- Deprecated, Testing nvim-cmp
+	-- use { "zbirenbaum/copilot.lua" }
+	-- use 'fannheyward/telescope-coc.nvim' -- Deprecated, Testing nvim-cmp
+	-- use  'SirVer/ultisnips'
+})

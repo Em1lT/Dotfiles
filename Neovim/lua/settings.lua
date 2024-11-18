@@ -6,6 +6,7 @@ local window = vim.wo
 local buf = vim.bo
 local glob = vim.g
 local opt = vim.opt
+local cmd = vim.cmd
 
 -- Global editor variables
 
@@ -52,8 +53,12 @@ opt.cmdheight = 2
 -- Miscs
 glob.loaded = 1
 glob.loaded_netrwPlugin = 1
-vim.cmd([[
+cmd([[
 	au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+]])
+
+cmd([[
+	set autoindent expandtab tabstop=2 shiftwidth=2
 ]])
 
 -- Obsidian

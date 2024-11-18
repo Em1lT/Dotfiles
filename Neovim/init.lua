@@ -8,8 +8,5 @@ require('mappings')
 require('plugins')
 require('configs')
 
-vim.cmd([[
-	set autoindent expandtab tabstop=2 shiftwidth=2
-]])
 
 
