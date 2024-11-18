@@ -85,7 +85,12 @@ map("n", "'", "ä")
 map("n", "<C-p>", ":Telescope find_files<CR>", {silent = true, noremap = true})
 
 -- noremap <C-h> :Telescope coc definitions<CR>
-map("n", "<C-h>", ":Telescope lsp_definitions<CR>", {silent = true, noremap = true})
+-- Changed to use vim.lsp.buf.definition() instead :Telescope lsp_definitions. 
+-- vim.lsp.buf goes deeper on the definition context.
+map("n", "<C-h>", ":lua vim.lsp.buf.definition() <CR>", {silent = true, noremap = true})
+
+-- noremap <C-h> :Telescope coc definitions<CR>
+map("n", "<C-j>", ":lua vim.lsp.buf.hover() <CR>", {silent = true, noremap = true})
 
 -- simi search with fzf under the cursor
 map("n", "<C-g>", ":lua require('simi').search_with_name_under_cursor()<CR>", {silent = true, noremap = true})
