@@ -27,8 +27,8 @@ return require('lazy').setup({
 	'hrsh7th/cmp-buffer',
 	'hrsh7th/cmp-path',
 	'hrsh7th/cmp-cmdline',
-  {'L3MON4D3/LuaSnip', dependencies = { 'rafamadriz/friendly-snippets' }},
-  { 'saadparwaiz1/cmp_luasnip' },
+  -- {'L3MON4D3/LuaSnip', dependencies = { 'rafamadriz/friendly-snippets' }},
+  -- { 'saadparwaiz1/cmp_luasnip' },
 
 	-- Visual help & navigation
 	'hoob3rt/lualine.nvim',
@@ -47,15 +47,15 @@ return require('lazy').setup({
 	-- Coding tools
 	'tpope/vim-surround',
 	'supermaven-inc/supermaven-nvim',
-  'sbdchd/neoformat',
+  --'sbdchd/neoformat', -- deprecated. Prefer formating the buffer with the lsp instead
 
 	-- Editor help
 	{ "fedepujol/move.nvim" },
 
 	-- Themes
 	{ 'catppuccin/nvim', name = 'catppuccin' },
-	'mhartington/oceanic-next',
-  'morhetz/gruvbox',
+	-- 'mhartington/oceanic-next',
+  -- 'morhetz/gruvbox',
 
 	-- Misc
 	'nvim-lua/plenary.nvim',
@@ -76,7 +76,7 @@ return require('lazy').setup({
 	-- }  Not in use. 
   -- formatter
 	-- use {'neoclide/coc.nvim', branch = 'release'} -- Deprecated, Testing nvim-cmp
-	-- use { "zbirenbaum/copilot.lua" }
 	-- use 'fannheyward/telescope-coc.nvim' -- Deprecated, Testing nvim-cmp
+	-- use { "zbirenbaum/copilot.lua" }
 	-- use  'SirVer/ultisnips'
 })
