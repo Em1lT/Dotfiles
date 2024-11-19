@@ -7,6 +7,3 @@ require('mappings')
 -- plugin configurations
 require('plugins')
 require('configs')
-
-
-
