@@ -32,7 +32,7 @@ gen.completeopt='menuone,noinsert,noselect'
 
 -- window scope
 
-window.number = true	
+window.number = true
 window.signcolumn = 'yes'
 
 -- global scope

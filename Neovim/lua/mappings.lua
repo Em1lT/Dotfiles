@@ -90,7 +90,7 @@ map("n", "<C-p>", ":Telescope find_files<CR>", {silent = true, noremap = true})
 map("n", "<C-h>", ":lua vim.lsp.buf.definition() <CR>", {silent = true, noremap = true})
 
 -- noremap <C-h> :Telescope coc definitions<CR>
-map("n", "<C-j>", ":lua vim.lsp.buf.hover() <CR>", {silent = true, noremap = true})
+map("n", "<C-c>", ":lua vim.lsp.buf.hover() <CR>", {silent = true, noremap = true})
 
 -- simi search with fzf under the cursor
 map("n", "<C-g>", ":lua require('simi').search_with_name_under_cursor()<CR>", {silent = true, noremap = true})
