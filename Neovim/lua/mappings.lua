@@ -39,6 +39,9 @@ unmap("n", "<C-n>")
 -- noremap <C-h> <Nop>
 unmap("n", "<C-h>")
 
+-- noremap <C-x> <Nop>
+unmap("n", "<C-x>")
+
 -- noremap <C-s> <Nop>
 unmap("n", "<C-s>")
 
@@ -66,7 +69,8 @@ map("n", "<C-k>", ":tabnext<CR>", {silent = true, noremap = true})
 -- this is for tweaking between eslint and prettier. Prettier has pretty good defaults but on the overall level eslint is much better
 -- map("n", "<C-f>", ":CocCommand prettier.formatFile<CR>", {silent = true, noremap = true})
 -- map("n", "<C-f>", ":CocCommand eslint.executeAutofix<CR>", {silent = true, noremap = true})
-map("n", "<C-f>", ":lua vim.lsp.buf.format()<CR>", {silent = true, noremap = true})
+map("n", "<C-f>", ":lua require('conform').format()<CR>", {silent = true, noremap = true})
+
 
 -- Navigation
 
@@ -91,6 +95,9 @@ map("n", "<C-h>", ":lua vim.lsp.buf.definition() <CR>", {silent = true, noremap 
 
 -- noremap <C-h> :Telescope coc definitions<CR>
 map("n", "<C-c>", ":lua vim.lsp.buf.hover() <CR>", {silent = true, noremap = true})
+
+-- noremap <C-h> :Telescope coc definitions<CR>
+map("n", "<C-x>", ":lua vim.lsp.buf.code_action() <CR>", {silent = true, noremap = true})
 
 -- simi search with fzf under the cursor
 map("n", "<C-g>", ":lua require('simi').search_with_name_under_cursor()<CR>", {silent = true, noremap = true})

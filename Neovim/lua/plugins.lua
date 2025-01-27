@@ -44,6 +44,13 @@ return require('lazy').setup({
 	'williamboman/mason.nvim',
   'williamboman/mason-lspconfig.nvim',
 
+  -- linting
+  'mfussenegger/nvim-lint',
+  {
+    'stevearc/conform.nvim',
+    opts = {},
+  },
+
 	-- Coding tools
 	'tpope/vim-surround',
 	'supermaven-inc/supermaven-nvim',
@@ -63,7 +70,7 @@ return require('lazy').setup({
   "rafamadriz/friendly-snippets",
 
 	-- Documentation
-	{ "epwalsh/obsidian.nvim", version = "*", dependencies = { "nvim-lua/plenary.nvim", }},
+	-- { "epwalsh/obsidian.nvim", version = "*", dependencies = { "nvim-lua/plenary.nvim", }},
 
 
   -- not in use, Still in packer config -> migrate to lazy.nvim when back in use

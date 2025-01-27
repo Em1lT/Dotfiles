@@ -1,5 +1,6 @@
 require("mason-lspconfig").setup({
-  ensure_installed = { "lua_ls", "ts_ls", "jdtls", "tailwindcss" },
+  -- https://github.com/williamboman/mason-lspconfig.nvim
+  ensure_installed = { "lua_ls", "ts_ls", "jdtls", "tailwindcss", "rust_analyzer" },
 })
 -- Specify how the border looks like
 local border = {
@@ -50,3 +51,4 @@ require("lspconfig").lua_ls.setup {
 require("lspconfig").ts_ls.setup{handlers = handlers}
 require("lspconfig").jdtls.setup{handlers = handlers}
 require("lspconfig").tailwindcss.setup{handlers = handlers}
+require("lspconfig").rust_analyzer.setup{handlers = handlers}

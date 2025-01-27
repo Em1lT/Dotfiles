@@ -6,11 +6,12 @@ require('configs.lualine')
 require('configs.signs')
 require('configs.move')
 require('configs.supermaven')
-require('configs.obsidian')
+-- require('configs.obsidian')
 require('configs.nvim-cmp')
 require('configs.mason')
 require('configs.lsp-config')
 require('configs.luasnip')
+require('configs.conform')
 
 
 
