@@ -1,5 +1,5 @@
 -- Change!!
--- 18.11.2024 Changed packer to lazy.nvim becuase packer is unmaintained 
+-- 18.11.2024 Changed packer to lazy.nvim because packer is unmaintained 
 
 -- bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -21,7 +21,6 @@ vim.opt.rtp:prepend(lazypath)
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 return require('lazy').setup({
 	-- part of nvim-cmp
-	'neovim/nvim-lspconfig',
 	'hrsh7th/nvim-cmp',
 	'hrsh7th/cmp-nvim-lsp',
 	'hrsh7th/cmp-buffer',
@@ -38,11 +37,19 @@ return require('lazy').setup({
 	'kyazdani42/nvim-web-devicons',
 	'nvim-telescope/telescope.nvim',
 	'Em1lT/simi',
-	'lewis6991/gitsigns.nvim',
+	-- 'lewis6991/gitsigns.nvim',
 
 	-- lsp handling
-	'williamboman/mason.nvim',
-  'williamboman/mason-lspconfig.nvim',
+	'neovim/nvim-lspconfig',
+  -- Removed for lack of support/maintenance. Too flaky at startup. Also. Also neovim 0.11 introduced a new lsp mechanic.
+  -- {
+  --     "mason-org/mason-lspconfig.nvim",
+  --     opts = {},
+  --     dependencies = {
+  --         { "mason-org/mason.nvim", opts = {} },
+  --         "neovim/nvim-lspconfig",
+  --     }
+  -- },
 
   -- linting
   'mfussenegger/nvim-lint',
