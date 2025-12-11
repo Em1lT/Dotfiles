@@ -9,7 +9,12 @@ require('lualine').setup(
         },
     sections = {
         lualine_a = {'mode'},
-        lualine_b = {'branch', 'filename'},
+        lualine_b = {'branch', {
+          'filename',
+          symbols = { modified = '[+]', readonly = '[-]', unnamed = '[No Name]', },
+          file_status = true,
+          path = 4,
+        }},
         lualine_c = {'encoding', 'fileformat', 'filetype'},
         lualine_x = {''},
         lualine_y = {'progress'},
@@ -18,7 +23,12 @@ require('lualine').setup(
     inactive_sections = {
         lualine_a = {},
         lualine_b = {},
-        lualine_c = {'filename'},
+        lualine_c = {{
+          'filename',
+          symbols = { modified = '[+]', readonly = '[-]', unnamed = '[No Name]', },
+          file_status = true,
+          path = 4,
+        }},
         lualine_x = {'location'},
         lualine_y = {},
         lualine_z = {}

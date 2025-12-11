@@ -29,6 +29,7 @@ gen.scrolloff = 8
 gen.wildmode='longest:list'
 gen.hidden = true
 gen.completeopt='menuone,noinsert,noselect'
+gen.backupcopy=true
 
 -- window scope
 

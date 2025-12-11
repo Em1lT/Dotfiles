@@ -3,16 +3,17 @@ require('configs.nvim-web-devicons')
 require('configs.telescope')
 require('configs.catpuccin')
 require('configs.lualine')
--- require('configs.signs')
+-- require('configs.signs') -- not in use
 require('configs.move')
 require('configs.supermaven')
--- require('configs.obsidian')
+-- require('configs.obsidian') -- not in use
 require('configs.nvim-cmp')
--- require('configs.mason')
--- require('configs.mason-lspconfig')
+-- require('configs.mason') -- not in use
+-- require('configs.mason-lspconfig')-- not in use
 require('configs.lsp-config')
--- require('configs.luasnip')
-require('configs.conform')
+-- require('configs.luasnip')-- not in use
+-- require('configs.conform') -- not in use
+require('configs.trouble')
 
 
 

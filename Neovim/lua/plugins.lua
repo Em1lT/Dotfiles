@@ -26,7 +26,7 @@ return require('lazy').setup({
 	'hrsh7th/cmp-buffer',
 	'hrsh7th/cmp-path',
 	'hrsh7th/cmp-cmdline',
-  {'L3MON4D3/LuaSnip', dependencies = { 'rafamadriz/friendly-snippets' }},
+  -- {'L3MON4D3/LuaSnip', dependencies = { 'rafamadriz/friendly-snippets' }},
   { 'saadparwaiz1/cmp_luasnip' },
 
 	-- Visual help & navigation
@@ -37,7 +37,11 @@ return require('lazy').setup({
 	'kyazdani42/nvim-web-devicons',
 	'nvim-telescope/telescope.nvim',
 	'Em1lT/simi',
-	-- 'lewis6991/gitsigns.nvim',
+  {
+  'folke/trouble.nvim',
+  opts = {},
+  cmd = "Trouble"
+  },
 
 	-- lsp handling
 	'neovim/nvim-lspconfig',
@@ -52,11 +56,12 @@ return require('lazy').setup({
   -- },
 
   -- linting
-  'mfussenegger/nvim-lint',
-  {
-    'stevearc/conform.nvim',
-    opts = {},
-  },
+  -- linting is now handled by the native lsp
+  -- 'mfussenegger/nvim-lint',
+  -- {
+  --   'stevearc/conform.nvim',
+  --   opts = {},
+  -- },
 
 	-- Coding tools
 	'tpope/vim-surround',

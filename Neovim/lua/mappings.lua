@@ -69,7 +69,9 @@ map("n", "<C-k>", ":tabnext<CR>", {silent = true, noremap = true})
 -- this is for tweaking between eslint and prettier. Prettier has pretty good defaults but on the overall level eslint is much better
 -- map("n", "<C-f>", ":CocCommand prettier.formatFile<CR>", {silent = true, noremap = true})
 -- map("n", "<C-f>", ":CocCommand eslint.executeAutofix<CR>", {silent = true, noremap = true})
-map("n", "<C-f>", ":lua require('conform').format()<CR>", {silent = true, noremap = true})
+-- map("n", "<C-f>", ":lua require('conform').format()<CR>", {silent = true, noremap = true})
+-- Due to chaning the lsp to native lsp from coc using the native lsp 
+map("n", "<C-f>", ":lua vim.lsp.buf.format()<CR>", {silent = true, noremap = true})
 
 
 -- Navigation
