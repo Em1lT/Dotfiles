@@ -110,6 +110,9 @@ map("n", "<C-g>", ":lua require('simi').search_with_name_under_cursor()<CR>", {s
 -- noremap <C-q> :lua require("harpoon.mark").add_file()<CR>
 map("n", "<C-a>", ":lua require('harpoon.mark').add_file()<CR>", {silent = true, noremap = true})
 
+-- built-in Undotree 
+map("n", "<leader>ee", "vim.cmd.packadd('nvim.undotree') require('undotree').open()<CR>", {silent = true, noremap = true})
+
 -- noremap <C-l> :lua require("harpoon.ui").toggle_quick_menu()<CR>
 -- map("n", "<C-l>", ":lua require('harpoon.ui').toggle_quick_menu()<CR>", {silent = true, noremap = true})
 map("n", "<C-l>", ":Telescope harpoon marks<CR>", {silent = true, noremap = true})
