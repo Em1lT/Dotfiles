@@ -77,7 +77,7 @@ map("n", "<C-f>", ":lua vim.lsp.buf.format()<CR>", {silent = true, noremap = tru
 -- Navigation
 
 -- noremap <C-n> :NvimTreeToggle<CR>
-map("n", "<C-n>", ":NvimTreeToggle<CR>", {silent = true, noremap = true})
+map("n", "<C-n>", ":Oil<CR>", {silent = true, noremap = true})
 
 -- command jj to change the INSERT MODE to NORMAL
 -- noremap jj <ESC>

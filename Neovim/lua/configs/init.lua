@@ -6,7 +6,9 @@ require('configs.lualine')
 require('configs.move')
 require('configs.supermaven')
 require('configs.signs')
-require('configs.trouble') -- not in use
+require('configs.trouble')
+require('configs.alpha')
+require('configs.oil')
 -- require('configs.obsidian') -- not in use
 -- require('configs.nvim-cmp')
 -- require('configs.mason') -- not in use
