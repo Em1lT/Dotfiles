@@ -1,8 +1,34 @@
--- Change!!
--- 18.11.2024 Changed packer to lazy.nvim because packer is unmaintained 
+-- Changelog!!
+-- 18.11.2024 Changed packer to lazy.nvim because packer is unmaintained
+-- 06.05.2026 Removed lazy.nvim. Started using the neovim 0.12 built-in plugin manager
 
+-- using the new vim.pack.add
+vim.pack.add({
+  { src = 'https://github.com/hoob3rt/lualine.nvim' },
+
+	{ src = 'https://github.com/ThePrimeagen/harpoon' },
+
+	{ src = 'https://github.com/kyazdani42/nvim-tree.lua' },
+	{ src = 'https://github.com/justinmk/vim-sneak' },
+	{ src = 'https://github.com/kyazdani42/nvim-web-devicons' },
+	{ src = 'https://github.com/nvim-telescope/telescope.nvim' },
+	{ src = 'https://github.com/nvim-lua/plenary.nvim' },
+	{ src = 'https://github.com/Em1lT/simi' },
+	{ src = 'https://github.com/catppuccin/nvim', name = 'catppuccin' },
+	{ src = 'https://github.com/fedepujol/move.nvim' },
+	{ src = 'https://github.com/tpope/vim-surround' },
+	{ src = 'https://github.com/supermaven-inc/supermaven-nvim' },
+	{ src = 'https://github.com/nvim-treesitter/nvim-treesitter' },
+	{ src = 'https://github.com/lewis6991/gitsigns.nvim' },
+	{ src = 'https://github.com/neovim/nvim-lspconfig' },
+	{ src = 'https://github.com/folke/trouble.nvim' }
+})
+
+--[====[
 -- bootstrap lazy.nvim
+-- old lazy.nvim plugin configuration
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
   local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
@@ -26,7 +52,7 @@ return require('lazy').setup({
 	'hrsh7th/cmp-buffer',
 	'hrsh7th/cmp-path',
 	'hrsh7th/cmp-cmdline',
-  {'L3MON4D3/LuaSnip', dependencies = { 'rafamadriz/friendly-snippets' }},
+  -- {'L3MON4D3/LuaSnip', dependencies = { 'rafamadriz/friendly-snippets' }},
   { 'saadparwaiz1/cmp_luasnip' },
 
 	-- Visual help & navigation
@@ -37,7 +63,11 @@ return require('lazy').setup({
 	'kyazdani42/nvim-web-devicons',
 	'nvim-telescope/telescope.nvim',
 	'Em1lT/simi',
-	-- 'lewis6991/gitsigns.nvim',
+  {
+  'folke/trouble.nvim',
+  opts = {},
+  cmd = "Trouble"
+  },
 
 	-- lsp handling
 	'neovim/nvim-lspconfig',
@@ -52,11 +82,12 @@ return require('lazy').setup({
   -- },
 
   -- linting
-  'mfussenegger/nvim-lint',
-  {
-    'stevearc/conform.nvim',
-    opts = {},
-  },
+  -- linting is now handled by the native lsp
+  -- 'mfussenegger/nvim-lint',
+  -- {
+  --   'stevearc/conform.nvim',
+  --   opts = {},
+  -- },
 
 	-- Coding tools
 	'tpope/vim-surround',
@@ -87,10 +118,12 @@ return require('lazy').setup({
   --     "nvim-lua/plenary.nvim",
   --     "hrsh7th/nvim-cmp",
 	--   },
-	-- }  Not in use. 
+	-- }  Not in use.
   -- formatter
 	-- use {'neoclide/coc.nvim', branch = 'release'} -- Deprecated, Testing nvim-cmp
 	-- use 'fannheyward/telescope-coc.nvim' -- Deprecated, Testing nvim-cmp
 	-- use { "zbirenbaum/copilot.lua" }
 	-- use  'SirVer/ultisnips'
 })
+
+--]====]
