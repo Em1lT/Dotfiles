@@ -8,7 +8,7 @@ vim.pack.add({
 
 	{ src = 'https://github.com/ThePrimeagen/harpoon' },
 
-	{ src = 'https://github.com/kyazdani42/nvim-tree.lua' },
+	-- { src = 'https://github.com/kyazdani42/nvim-tree.lua' }, -- First casualty of new plugin manager. Changed to oil.nvim
 	{ src = 'https://github.com/justinmk/vim-sneak' },
 	{ src = 'https://github.com/kyazdani42/nvim-web-devicons' },
 	{ src = 'https://github.com/nvim-telescope/telescope.nvim' },
@@ -21,7 +21,11 @@ vim.pack.add({
 	{ src = 'https://github.com/nvim-treesitter/nvim-treesitter' },
 	{ src = 'https://github.com/lewis6991/gitsigns.nvim' },
 	{ src = 'https://github.com/neovim/nvim-lspconfig' },
-	{ src = 'https://github.com/folke/trouble.nvim' }
+	{ src = 'https://github.com/folke/trouble.nvim' },
+	{ src = 'https://github.com/goolord/alpha-nvim' },
+	{ src = 'https://github.com/folke/snacks.nvim' },
+	{ src = 'https://github.com/OXY2DEV/markview.nvim' },
+	{ src = 'https://github.com/stevearc/oil.nvim' }
 })
 
 --[====[
