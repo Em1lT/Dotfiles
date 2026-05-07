@@ -71,7 +71,8 @@ map("n", "<C-k>", ":tabnext<CR>", {silent = true, noremap = true})
 -- map("n", "<C-f>", ":CocCommand eslint.executeAutofix<CR>", {silent = true, noremap = true})
 -- map("n", "<C-f>", ":lua require('conform').format()<CR>", {silent = true, noremap = true})
 -- Due to chaning the lsp to native lsp from coc using the native lsp 
-map("n", "<C-f>", ":lua vim.lsp.buf.format()<CR>", {silent = true, noremap = true})
+-- Due to not working switced to using nvim-lint
+map("n", "<C-f>", ":lua require('lint').try_lint()<CR>", {silent = true, noremap = true})
 
 
 -- Navigation

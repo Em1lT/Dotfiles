@@ -25,7 +25,9 @@ vim.pack.add({
 	{ src = 'https://github.com/goolord/alpha-nvim' },
 	{ src = 'https://github.com/folke/snacks.nvim' },
 	{ src = 'https://github.com/OXY2DEV/markview.nvim' },
-	{ src = 'https://github.com/stevearc/oil.nvim' }
+	{ src = 'https://github.com/stevearc/oil.nvim' },
+	{ src = 'https://github.com/mfussenegger/nvim-lint' },
+	{ src = 'https://github.com/stevearc/conform.nvim' }
 })
 
 --[====[
